@@ -1,0 +1,35 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.title-weather{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-semibold, vars.$fs-lg);
+
+    text-align: center;
+    margin-top: 47px;
+}
+
+.title-country{
+    @include mixins.set-font(vars.$ff-primary, vars.$fw-light, vars.$fs-med);
+
+    text-align: center;
+}
+
+.text-province{
+    @include mixins.set-font(vars.$ff-secondary, vars.$fw-bold, vars.$fs-xxmed);
+}
+
+.text-condition{
+    @include mixins.set-font(vars.$ff-secondary, vars.$fw-regular, vars.$fs-xxsm);
+}
+
+.text-temperature{
+    @include mixins.set-font(vars.$ff-secondary, vars.$fw-bold, vars.$fs-xmed);
+}
+
+.text-info{
+    @include mixins.set-font(vars.$ff-terciary, vars.$fw-regular, vars.$fs-xsm, vars.$clr-white !important);
+}
+
+.text-uv-fl{
+    @include mixins.set-font(vars.$ff-secondary, vars.$fw-thin, vars.$fs-sm);
+}

@@ -1,0 +1,38 @@
+@use '../abstracts/vars';
+
+.card-style{
+    border-radius: 10px;
+    width: auto;
+    height: 220px;
+    background: vars.$clr-blue;
+    margin: 2rem;
+}
+
+.humidity-size{
+    width: 43px;
+    height: 20px;
+}
+
+.backgorund-blue{
+    background: vars.$clr-blue;
+}
+
+.backgorund-yellow{
+    background: vars.$clr-yellow;
+}
+
+.backgorund-orange{
+    background: vars.$clr-orange;
+}
+
+.backgorund-red{
+    background: vars.$clr-red;
+}
+
+.backgorund-red-dark{
+    background: vars.$clr-red-dark;
+}
+
+.backgorund-wine{
+    background: vars.$clr-wine;
+}

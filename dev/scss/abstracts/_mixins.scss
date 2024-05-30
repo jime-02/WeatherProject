@@ -1,0 +1,9 @@
+@use '../abstracts/vars';
+@use '../media-queries';
+
+@mixin set-font($ffamily, $fweight, $fsize, $fcolor: vars.$clr-white){
+    font-family: $ffamily;
+    font-weight: $fweight;
+    font-size: $fsize;
+    color: $fcolor;
+}

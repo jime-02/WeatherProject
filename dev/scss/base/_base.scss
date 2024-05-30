@@ -1,0 +1,8 @@
+@use './vendor/bootstrap/bootstrap.scss';
+@use '../abstracts/vars';
+
+body{
+    font-family: vars.$ff-primary;
+    background: transparent linear-gradient(205deg, hsla(210, 92%, 24%, 1) 0%, hsla(188, 100%, 35%, 1) 100%) 0% 0% no-repeat padding-box;
+    color: vars.$clr-white;
+}

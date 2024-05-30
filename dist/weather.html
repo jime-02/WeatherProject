@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Weather App</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-ui-text-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/sf-ui-display" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- Vinculación css -->
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>
+<body>
+    
+    <section id="app" class="mb-5">
+        <weather-ubication title="Weather" city="Costa Rica"></weather-ubication>
+
+        <div v-for="(item, index) in provinces">
+            <provinces :province="item.province" :condition="item.condition" :temperature="item.temperature" :humidity="item.humidity" :velocity="item.velocity" :image="item.image" :feelslike="item.feelslike" :ultraviolet="item.ultraviolet"></provinces>
+        </div>
+    </section>
+
+
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    <!-- AXIOS API JS-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        /*
+            --- ENPOINTS ---
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=San Jose, Costa Rica&aqi=no
+
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=Heredia, Costa Rica&aqi=no
+
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=Alajuela, Costa Rica&aqi=no
+
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=Cartago, Costa Rica&aqi=no
+
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=Limon, Costa Rica&aqi=no
+
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=Guanacaste, Costa Rica&aqi=no
+
+            https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=Puntarenas, Costa Rica&aqi=no
+        */
+        axios({
+            method: 'get',
+            url: 'https://api.weatherapi.com/v1/current.json?key=55b5b2c0262946e287865437231505&q=San Jose, Costa Rica&aqi=no'
+        })
+        .then(
+            (response) => {
+                console.log(response);
+            }
+        )
+        .catch(
+            error => console.log(error)
+        );
+    </script>
+
+    <!-- Main script -->
+    <script src="./js/component.js"></script>
+
+    <!-- components script -->
+    <script src="./js/components/Provincia.js"></script>
+    <script src="./js/components/WeaterUbication.js"></script>
+
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+
+</body>
+</html>
